@@ -352,7 +352,7 @@ edit_interface_rep::compute_operation_footer (tree st) {
   tree   shortcut= kbd_shortcut ("(make '" * op_name * ")");
   string shortcut_s= as_string (shortcut);
   if (shortcut_s != "")
-  r=concat (r, " [", shortcut, "]");
+    r= concat (r, " [", shortcut, "]");
   return r;
 }
 
