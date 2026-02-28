@@ -130,7 +130,7 @@ edit_interface_rep::set_middle_footer () {
  * Set right footer with information about cursor position
  ******************************************************************************/
 
- // Cache for keyboard shortcuts
+// Cache for keyboard shortcuts
 static hashmap<string, tree> shortcut_cache ("");
 
 tree
@@ -142,7 +142,7 @@ edit_interface_rep::get_shortcut_suffix (string cmd_s) {
   tree   result    = "";
   if (binding != "" && binding != "#f") {
     tree shortcut_tree= sv->kbd_system_rewrite (binding);
-    result= concat (" [", shortcut_tree, "]");
+    result            = concat (" [", shortcut_tree, "]");
   }
   shortcut_cache (cmd_s)= result;
   return result;
@@ -348,11 +348,10 @@ edit_interface_rep::compute_operation_footer (tree st) {
     }
   }
   if (last_item (tp) == 0) r= concat ("before ", r);
-  string op_name= drd->get_name (L (st));
-  tree   shortcut= kbd_shortcut ("(make '" * op_name * ")");
+  string op_name   = drd->get_name (L (st));
+  tree   shortcut  = kbd_shortcut ("(make '" * op_name * ")");
   string shortcut_s= as_string (shortcut);
-  if (shortcut_s != "")
-    r= concat (r, " [", shortcut, "]");
+  if (shortcut_s != "") r= concat (r, " [", shortcut, "]");
   return r;
 }
 
