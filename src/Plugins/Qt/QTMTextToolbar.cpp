@@ -25,7 +25,6 @@
 #include <QGuiApplication>
 #include <QHelpEvent>
 #include <QIcon>
-#include <QLabel>
 #include <QLayoutItem>
 #include <QPainter>
 #include <QPen>
@@ -86,9 +85,6 @@ QTMTextToolbar::clearButtons () {
 void
 QTMTextToolbar::rebuildButtonsFromScheme () {
   clearButtons ();
-  QLabel* placeholder= new QLabel ("文本工具栏", this);
-  placeholder->setAlignment (Qt::AlignCenter);
-  layout->addWidget (placeholder);
   autoSize ();
 }
 
